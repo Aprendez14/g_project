@@ -13,8 +13,5 @@ class User(models.Model):
     percent_in_level = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     #last_login = models.DateTimeField()
 
-#URL
-#RANKING
-
     class Meta:
         ordering = ('created',)

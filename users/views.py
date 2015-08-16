@@ -10,8 +10,8 @@ from rest_framework.reverse import reverse
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
-        #'users': reverse('user-list', request=request, format=format),
-        'users': reverse('user-list', request=request, format=format)
+        'users': reverse('user-list', request=request, format=format),
+        'ranking': reverse('ranking-list', request=request, format=format)
     })
 
 
@@ -22,4 +22,9 @@ class UserList(generics.ListCreateAPIView):
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class RankingList(generics.ListCreateAPIView):
+    queryset = User.objects.all().order_by("-points")
     serializer_class = UserSerializer
