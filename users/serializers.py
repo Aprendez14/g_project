@@ -1,8 +1,8 @@
 from django.forms import widgets
 from rest_framework import serializers
-from infos.models import Info
+from users.models import User
 
-class InfoSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Info
+        model = User
         fields = ('id', 'name', 'golden_badges', 'silver_badges', 'bronze_badges', 'points', 'level', 'percent_in_level')#, 'last_login')
