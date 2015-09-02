@@ -8,13 +8,15 @@ from rest_framework.reverse import reverse
 #probando
 from rest_framework.views import APIView
 from django.http import HttpResponse
-from django.template import defaultfilters
+from django.http import Http404
+
 
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'ranking': reverse('ranking-list', request=request, format=format)
+        'ranking': reverse('ranking-list', request=request, format=format),
+        'actions': reverse('action-list', request=request, format=format)
     })
 
 
@@ -47,17 +49,24 @@ class UserAction(APIView):
     def get_object_action(self, pk_a):
         try:
             return Action.objects.get(pk=pk_a)
-        except User.DoesNotExist:
+        except Action.DoesNotExist:
             raise Http404
 
+
     def get(self, request, pk, pk2, format=None):
-        action = self.get_object_action(pk)
+        user = self.get_object_user(pk)
+        action = self.get_object_action(pk2)
 
         if action.id==1:
             return HttpResponse("You have been successfully logged up. Welcome!")
 
         elif action.id==2:
-            return HttpResponse("Hello again. Come in!")
+            #user.points = user.points + 10
+            #return HttpResponse("Hello again. Come in!")
+
+            user.level += 1
+            user.save()
+            return HttpResponse(user.level)
 
         elif action.id==3:
             return HttpResponse("We hope see you soon!")
@@ -77,6 +86,12 @@ class UserAction(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+#        serializer = UserSerializer(user_, data=request.data)
+#        if serializer.is_valid():
+#            serializer.save()
+#            return Response(serializer.data)
+#        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # Listar y detallar las acciones (funciona OK)

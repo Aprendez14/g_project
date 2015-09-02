@@ -7,14 +7,14 @@ from django.template import defaultfilters
 #probando:
 class Action(models.Model):
     name = models.CharField(max_length=100, blank=False)
-    slug = models.SlugField(max_length=100, unique=True)
+#    slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(max_length=300, blank=False, default="No description")
     consequence = models.TextField(max_length=300, blank=False)
 
 
-    def save(self, *args, **kwargs):
-        self.slug = defaultfilters.slugify(self.name)
-        super(Action, self).save(*args, **kwargs)
+#    def save(self, *args, **kwargs):
+#        self.slug = defaultfilters.slugify(self.name)
+#        super(Action, self).save(*args, **kwargs)
 
 #    def save(self, *args, **kwargs):
 #        if not self.id:
