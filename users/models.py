@@ -35,7 +35,7 @@ class User(models.Model):
     silver_badges = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     bronze_badges = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     points = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
-    level = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
+    level = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
     percent_in_level = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     #last_login = models.DateTimeField()
     #id_action = models.ForeignKey(Action)
