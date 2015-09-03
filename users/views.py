@@ -220,20 +220,6 @@ class UserAction(APIView):
             user.save()
             return HttpResponse("Great video, right? +10 points!")
 
-        #PROBAR SI ESTO ES NECESARIO:
-#        serializer = ActionSerializer(action, data=request.data)
-#        if serializer.is_valid():
-#            serializer.save()
-#            return Response(serializer.data)
-#        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#        serializer = UserSerializer(user_, data=request.data)
-#        if serializer.is_valid():
-#            serializer.save()
-#            return Response(serializer.data)
-#        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 # Listar y detallar las acciones (funciona OK)
 
 class ActionList(generics.ListCreateAPIView):
