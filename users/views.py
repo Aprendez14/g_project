@@ -1,42 +1,68 @@
 from users.models import User, Action
 from users.serializers import UserSerializer, ActionSerializer
 from rest_framework import generics
-# Para el endpoint inicial
+# for initial endpoint
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-#probando
+# others
 from rest_framework.views import APIView
 from django.http import HttpResponse
 from django.http import Http404
-
+import datetime
 
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'ranking': reverse('ranking-list', request=request, format=format),
+        'point ranking': reverse('ranking-point-list', request=request, format=format),
+        'level ranking': reverse('ranking-level-list', request=request, format=format),
+        'golden badges ranking': reverse('ranking-golden-list', request=request, format=format),
+        'silver badges ranking': reverse('ranking-silver-list', request=request, format=format),
+        'bronze badges ranking': reverse('ranking-bronze-list', request=request, format=format),
+
         'actions': reverse('action-list', request=request, format=format)
     })
 
-
+# list and detail of users
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+# list and detail of actions
+class ActionList(generics.ListCreateAPIView):
+    queryset = Action.objects.all()
+    serializer_class = ActionSerializer
 
-class RankingList(generics.ListCreateAPIView):
+class ActionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Action.objects.all()
+    serializer_class = ActionSerializer
+
+# list of rankings
+class RankingPointList(generics.ListCreateAPIView):
     queryset = User.objects.all().order_by("-points")
     serializer_class = UserSerializer
-#
-#
-#
-#PROBANDO
+
+class RankingLevelList(generics.ListCreateAPIView):
+    queryset = User.objects.all().order_by("-level")
+    serializer_class = UserSerializer
+
+class RankingGoldenList(generics.ListCreateAPIView):
+    queryset = User.objects.all().order_by("-golden_badges")
+    serializer_class = UserSerializer
+
+class RankingSilverList(generics.ListCreateAPIView):
+    queryset = User.objects.all().order_by("-silver_badges")
+    serializer_class = UserSerializer
+
+class RankingBronzeList(generics.ListCreateAPIView):
+    queryset = User.objects.all().order_by("-bronze_badges")
+    serializer_class = UserSerializer
+
 
 class UserAction(APIView):
 
@@ -57,47 +83,93 @@ class UserAction(APIView):
         user = self.get_object_user(pk)
         action = self.get_object_action(pk2)
 
+
         if action.id==1:
             # Log up
             return HttpResponse("You have been successfully logged up. Welcome!")
 
+# /////////////////////////////////////////
+
         elif action.id==2:
             # Sign in
-            return HttpResponse("Hello again. Come in!")
+            if user.player_type=="Achiever" and user.learning_style=="Undefined":
+                return HttpResponse("Hello again. Are you ready for this?")
+
+            elif user.player_type=="Socializer" and user.learning_style=="Undefined":
+                return HttpResponse("Hello again. Come in, your friends hope you.")
+
+            elif user.player_type=="Killer" and user.learning_style=="Undefined":
+                return HttpResponse("Are not you still the #1? Do they know you!")
+
+            elif user.player_type=="Explorer" and user.learning_style=="Undefined":
+                return HttpResponse("Hello again. Come in and discover it!")
+
+            else:
+                return HttpResponse("Hello again. Come in!")
+
+# /////////////////////////////////////////
 
         elif action.id==3:
             # Log out
-            return HttpResponse("We hope see you soon!")
+            #user.last_login = datetime.datetime.now()
+            if user.player_type=="Achiever" and user.learning_style=="Undefined":
+                return HttpResponse("You still have to get many badges. See you soon!")
+
+            elif user.player_type=="Socializer" and user.learning_style=="Undefined":
+                return HttpResponse("We and your friends will miss you, come back soon!")
+
+            elif user.player_type=="Killer" and user.learning_style=="Undefined":
+                return HttpResponse("That is all? See you soon!")
+
+            elif user.player_type=="Explorer" and user.learning_style=="Undefined":
+                return HttpResponse("See you soon! You still have much to discover.")
+
+            else:
+                return HttpResponse("We hope see you soon!")
+
+# /////////////////////////////////////////
 
         elif action.id==4:
             user.points += 10
             user.save()
             return HttpResponse("Well done, +10 points!! ")
 
+# /////////////////////////////////////////
+
         elif action.id==5:
             user.points += 20
             user.save()
             return HttpResponse("Well done, +20 points!! ")
+
+# /////////////////////////////////////////
 
         elif action.id==6:
             user.points += 50
             user.save()
             return HttpResponse("Well done, +50 points!! ")
 
+# /////////////////////////////////////////
+
         elif action.id==7:
             user.bronze_badges += 1
             user.save()
             return HttpResponse("Great! You have earned a bronze badge! ")
+
+# /////////////////////////////////////////
 
         elif action.id==8:
             user.silver_badges += 1
             user.save()
             return HttpResponse("Great! You have earned a silver badge! ")
 
+# /////////////////////////////////////////
+
         elif action.id==9:
             user.golden_badges += 1
             user.save()
             return HttpResponse("Congratulation, you have earned a golden badge! ")
+
+# /////////////////////////////////////////
 
         elif action.id==10:
             # The percentage completed at this level is increased by 5 units
@@ -111,6 +183,8 @@ class UserAction(APIView):
                 user.save()
                 return HttpResponse("Congratulation! You have reached a new level!")
 
+# /////////////////////////////////////////
+
         elif action.id==11:
             # The percentage completed at this level is increased by 10 units
             if user.percent_in_level <= 90:
@@ -123,6 +197,8 @@ class UserAction(APIView):
                 user.save()
                 return HttpResponse("Congratulation! You have reached a new level!")
 
+# /////////////////////////////////////////
+
         elif action.id==12:
             # The user complete the level with an only action.
             user.level += 1
@@ -130,7 +206,8 @@ class UserAction(APIView):
             user.save()
             return HttpResponse("Congratulation! You have reached a new level!")
 
-        # ACTIONS THAT TAKE AWAY POINTS
+# ///// ACTIONS THAT TAKE AWAY POINTS /////
+
         elif action.id==13:
             if user.points > 10:
                 user.points -= 10
@@ -140,6 +217,8 @@ class UserAction(APIView):
                 user.points = 0
                 user.save()
                 return HttpResponse("Your scores is 0, cheer up! Fall seven times and stand up eight!")
+
+# /////////////////////////////////////////
 
         elif action.id==14:
             if user.points > 20:
@@ -151,6 +230,8 @@ class UserAction(APIView):
                 user.save()
                 return HttpResponse("Your scores is 0. Cheer up! Fall seven times and stand up eight!")
 
+# /////////////////////////////////////////
+
         elif action.id==15:
             if user.points > 50:
                 user.points -= 50
@@ -161,7 +242,8 @@ class UserAction(APIView):
                 user.save()
                 return HttpResponse("Your scores is 0. Cheer up! Fall seven times and stand up eight!")
 
-        # ACTIONS THAT TAKE AWAY PROGRESS IN LEVEL
+# /// ACTIONS THAT TAKE AWAY PROGRESS IN LEVEL ///
+ 
         elif action.id==16:
             # The percentage completed at this level is decreased by 5 units.
             if user.percent_in_level > 5:
@@ -172,6 +254,8 @@ class UserAction(APIView):
                 user.percent_in_level = 0
                 user.save()
                 return HttpResponse("Your progress is 0% in this level, cheer up! You can do better!")
+
+# /////////////////////////////////////////
 
         elif action.id==17:
             # The percentage completed at this level is decreased by 10 units.
@@ -184,11 +268,15 @@ class UserAction(APIView):
                 user.save()
                 return HttpResponse("Your progress is 0% in this level, cheer up! You can do better!")
 
+# ////////// ANOTHER ACTIONS /////////////
+
         elif action.id==18:
             # Feedback and 10 points for visit
             user.points += 10
             user.save()
             return HttpResponse("Thank you for your visit. +10 points!")
+
+# /////////////////////////////////////////
 
         elif action.id==19:
             # Feedback and 10 points for click
@@ -196,11 +284,15 @@ class UserAction(APIView):
             user.save()
             return HttpResponse("Thank you for click here. +10 points!")
 
+# /////////////////////////////////////////
+
         elif action.id==20:
             # Feedback and 10 points for vote
             user.points += 10
             user.save()
             return HttpResponse("Thank you for your vote. +10 points!")
+
+# /////////////////////////////////////////
 
         elif action.id==21:
             # Feedback and 10 points for comment
@@ -208,25 +300,18 @@ class UserAction(APIView):
             user.save()
             return HttpResponse("Thank you for your comment. +10 points!")
 
+# /////////////////////////////////////////
+
         elif action.id==22:
             # Feedback and 10 points for upload a file
             user.points += 10
             user.save()
             return HttpResponse("Your file has been successfully uploaded. +10 points!")
 
+# /////////////////////////////////////////
+
         elif action.id==23:
             # Feedback and 10 points for watch a video
             user.points += 10
             user.save()
             return HttpResponse("Great video, right? +10 points!")
-
-# Listar y detallar las acciones (funciona OK)
-
-class ActionList(generics.ListCreateAPIView):
-    queryset = Action.objects.all()
-    serializer_class = ActionSerializer
-
-
-class ActionDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Action.objects.all()
-    serializer_class = ActionSerializer
