@@ -88,7 +88,12 @@ class UserAction(APIView):
             # Log up
             return HttpResponse("You have been successfully logged up. Welcome!")
 
-# /////////////////////////////////////////
+
+# //////////////////////////////////////////////////////////////////////////////////
+# ////////////////////////// PLAYER TYPES MECHANICS ////////////////////////////////
+# //////////////////////////////////////////////////////////////////////////////////
+# //////////////////////////////////////////////////////////////////////////////////
+
 
         elif action.id==2:
             # Sign in
@@ -132,21 +137,61 @@ class UserAction(APIView):
         elif action.id==4:
             user.points += 10
             user.save()
-            return HttpResponse("Well done, +10 points!! ")
+            if user.player_type=="Achiever" and user.learning_style=="Undefined":
+                return HttpResponse("Good job! +10 points, go on!")
+
+            elif user.player_type=="Socializer" and user.learning_style=="Undefined":
+                return HttpResponse("Yes! +10 points, tell your friends it!")
+
+            elif user.player_type=="Killer" and user.learning_style=="Undefined":
+                return HttpResponse("+10 points, no bad. But do you conform with that?")
+
+            elif user.player_type=="Explorer" and user.learning_style=="Undefined":
+                return HttpResponse("Good! +10 points, step by step knowledge comes...")
+
+            else:
+                return HttpResponse("Well done, +10 points!! ")
+
 
 # /////////////////////////////////////////
 
         elif action.id==5:
             user.points += 20
             user.save()
-            return HttpResponse("Well done, +20 points!! ")
+            if user.player_type=="Achiever" and user.learning_style=="Undefined":
+                return HttpResponse("Great job! +20 points, that is the way!")
+
+            elif user.player_type=="Socializer" and user.learning_style=="Undefined":
+                return HttpResponse("Good! +20 points, You will make many friends if you keep this up!")
+
+            elif user.player_type=="Killer" and user.learning_style=="Undefined":
+                return HttpResponse("+20 points, really no bad!")
+
+            elif user.player_type=="Explorer" and user.learning_style=="Undefined":
+                return HttpResponse("Great! +20 points, go on, you still have much to discover.")
+
+            else:
+                return HttpResponse("Well done, +20 points!! ")
 
 # /////////////////////////////////////////
 
         elif action.id==6:
             user.points += 50
             user.save()
-            return HttpResponse("Well done, +50 points!! ")
+            if user.player_type=="Achiever" and user.learning_style=="Undefined":
+                return HttpResponse("Awesome! +50 points!")
+
+            elif user.player_type=="Socializer" and user.learning_style=="Undefined":
+                return HttpResponse("Great! +50 points, your friends will be proud of you!")
+
+            elif user.player_type=="Killer" and user.learning_style=="Undefined":
+                return HttpResponse("+50 points, you shows who's boss!")
+
+            elif user.player_type=="Explorer" and user.learning_style=="Undefined":
+                return HttpResponse("Great! +50 points, go on and be curious.")
+
+            else:
+                return HttpResponse("Well done, +50 points!! ")
 
 # /////////////////////////////////////////
 
@@ -243,7 +288,7 @@ class UserAction(APIView):
                 return HttpResponse("Your scores is 0. Cheer up! Fall seven times and stand up eight!")
 
 # /// ACTIONS THAT TAKE AWAY PROGRESS IN LEVEL ///
- 
+
         elif action.id==16:
             # The percentage completed at this level is decreased by 5 units.
             if user.percent_in_level > 5:
