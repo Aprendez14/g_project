@@ -27,9 +27,3 @@ urlpatterns = format_suffix_patterns([
 # Login and logout views for the browsable API
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ])
-
-
-# Login and logout views for the browsable API
-#urlpatterns += [
-#    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-#]

@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 #probando:
+#from model_utils import Choices
 from django.template import defaultfilters
 
 
@@ -21,6 +22,13 @@ class User(models.Model):
     name = models.CharField(max_length=100, blank=False)
     player_type = models.CharField(max_length=100, blank=False, default="Undefined")
     learning_style = models.CharField(max_length=100, blank=False, default="Undefined")
+
+#    PTYPE = (("Undefined", "Undefined"), ("Explorer", "Explorer"), ("Killer", "Killer"), ("Socializer", "Socializer"), ("Achiever", "Achiever"))
+#    player_type = models.CharField(choices=PTYPE, max_length=100, default="Undefined")
+
+#    LSTYLE = ((1, "Undefined"), (2, "Activist"), (3, "Reflector"), (4, "Pragmatist"), (5, "Theoretician"))
+#    learning_style = models.CharField(choices=LSTYLE, max_length=100, default="Undefined")
+
     golden_badges = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     silver_badges = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     bronze_badges = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
