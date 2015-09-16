@@ -119,16 +119,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Hello again! Your imagination is free here.")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("Hello again, experience a bit.")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("Hello! What do you want to do today?")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("Hello again! There are still many issues to resolve here.")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -164,36 +164,33 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("See you soon! You still have much to discover.")
 
-                else:
-                    return HttpResponse("We hope see you soon!")
-
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Trust yourself and keep your engagement. See you soon!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("There is a time for everything. See you soon!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    return HttpResponse("See you soon!")
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    return HttpResponse("No say bye, better see you tomorrow, right?")
 
-                elif student.learning_style=="Kinesthetic" and student.player_type=="Undefined":
-                    return HttpResponse("")
+                elif student.learning_style=="Kinesthetic":
+                    return HttpResponse("You feel well here, come back soon!")
 
-                else:
-                    return HttpResponse("We hope see you soon!")
+            else:
+                return HttpResponse("We hope see you soon!")
 
 # /////////////////////////////////////////
 
@@ -215,22 +212,19 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("Good! +10 points, step by step knowledge comes...")
 
-                else:
-                    return HttpResponse("Well done, +10 points!! ")
-
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("+10 points, this is getting exciting!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("+10 points, that is a good job!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -242,8 +236,8 @@ class StudentAction(APIView):
 
                 elif student.learning_style=="Kinesthetic":
                     return HttpResponse("+10 points. Keep practicing!")
-                else:
-                    return HttpResponse("Well done, +10 points!! ")
+            else:
+                return HttpResponse("Well done, +10 points!! ")
 
 # /////////////////////////////////////////
 
@@ -264,22 +258,20 @@ class StudentAction(APIView):
 
                 elif student.player_type=="Explorer":
                     return HttpResponse("Great! +20 points, go on, you still have much to discover.")
-                else:
-                    return HttpResponse("We hope see you soon!")
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("+20 points, exciting experience, right?!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("+20 points, great analysis!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -310,26 +302,24 @@ class StudentAction(APIView):
                     return HttpResponse("Great! +50 points, your friends will be proud of you!")
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+50 points, you shows who's boss!")
+                    return HttpResponse("+50 points. Show who is the boss!")
 
                 elif student.player_type=="Explorer":
                     return HttpResponse("Great! +50 points, go on and be curious.")
-                else:
-                    return HttpResponse("We hope see you soon!")
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Great! +50 points, keep it up!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("+50 points, thinking before acting is a great idea!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -339,11 +329,6 @@ class StudentAction(APIView):
                 elif student.learning_style=="Auditory":
                     respuesta = "<html><body>+50 points! Repeat it yourself: I'm working really well! </br> Your score is: %s.</body></html>" % student.points
                     return HttpResponse(respuesta)
-#                    serializer = ActionSerializer(action, data=request.data)
-#                    if serializer.is_valid():
-#                        serializer.save()
-#                        return Response(serializer.data)
-#                    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
                 elif student.learning_style=="Kinesthetic":
                     return HttpResponse("+50 points... this deserves a dance!")
@@ -374,16 +359,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("+1 bronze badge! New experiences await you.")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("+1 bronze badge! This is just the beginning, keep practicing.")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("Great! +1 bronze badge, your intuition works!")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("Great! +1 bronze badge, this is better than any hypothesis!")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -408,41 +393,41 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    return HttpResponse("+1 silver badge, it's fantastic! But there are better badges yet.")
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    return HttpResponse("+1 silver badge, with it is easier make new friends!")
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    return HttpResponse("+1 silver badge, but you prefer the golden badges, right?")
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    return HttpResponse("+1 silver badge, it demonstrates your experience.")
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Great! +1 silver badge. Go on, even greater challenges await you!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("Great! +1 silver badge. Organize and win.")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    return HttpResponse("Wow! +1 silver badge. Imagine when your friends see it.")
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    return HttpResponse("Wow! +1 silver badge! That sounds so good!.")
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    return HttpResponse("Wow! +1 silver badge! Do you want touch it, right?")
 
             else:
                 return HttpResponse("Great! You have earned a silver badge! ")
@@ -456,44 +441,44 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    return HttpResponse("+1 golden bagde, this is the reward for an amazing job!")
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    return HttpResponse("Great! +1 golden bagde. This is the most prestigious badge.")
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    return HttpResponse("Yes! +1 golden bagde! Show them who is the boss.")
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    return HttpResponse("Great! +1 golden bagde, a recognition of your experience and knowledge.")
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Wow! +1 golden bagde, are you excited? You should!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("Great! +1 golden badge. A good analysis pays off!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("+1 golden bagde! Take a photo!")
+                    return HttpResponse("+1 golden bagde! Amazing! Take a photo!")
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    return HttpResponse("+1 golden bagde! Amazing! Tell your friends!")
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    return HttpResponse("+1 golden bagde! Amazing! Can you feeling that?")
 
             else:
-                return HttpResponse("Congratulation, you have earned a golden badge! ")
+                return HttpResponse("Congratulations, you have earned a golden badge! ")
 
 # /////////////////////////////////////////
 
@@ -506,44 +491,45 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. A little closer!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. When you progress people are interested in you.")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Hurry up! More rhythm!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Strange new things are coming.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("+5% in this level. Go for it!")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("+5% in this level. Observe, analyze, forward.")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. If progress grows up is all good.")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Listen how this goes on!")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Good sensations, right?")
 
                 else:
                     return HttpResponse("Good job! Your progress advances +5% in this level!")
+
             else:
                 student.level += 1
                 student.percent_in_level = 0
@@ -552,44 +538,44 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("New level! Congratulations! Let's go!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level! And more friends!")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("New level! Let's go! Let's go!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new world!")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
-                        return HttpResponse("Congratulation! New level, new challenges!")
+                    if student.learning_style=="Diverging":
+                        return HttpResponse("Congratulations! New level, new challenges!")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("Congratulations! New level, new info that needs order!")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! A new level is before your eyes!")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
 
                 else:
-                    return HttpResponse("Congratulation! You have reached a new level!")
+                    return HttpResponse("Congratulations! You have reached a new level!")
 
 # /////////////////////////////////////////
 
@@ -602,41 +588,41 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. That's a big step! Go on!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. A little effort and then socialize.")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. You know that this is the way.")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. Discover the next level is nearer.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("+10% in this level. What a breakthrough!")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("+10% in this level. Good analyze, good job.")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. See? This is better!")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. Repeat: This is progressing!")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. Experiencing and growing up.")
 
                 else:
                     return HttpResponse("Good job! Your progress advances +10% in this level!")
@@ -649,44 +635,44 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("New level! Congratulations! Let's go!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level! And more friends!")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("New level! Let's go! Let's go!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new world!")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
-                        return HttpResponse("Congratulation! New level, new challenges!")
+                    if student.learning_style=="Diverging":
+                        return HttpResponse("Congratulations! New level, new challenges!")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("Congratulations! New level, new info that needs order!")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! A new level is before your eyes!")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
 
                 else:
-                    return HttpResponse("Congratulation! You have reached a new level!")
+                    return HttpResponse("Congratulations! You have reached a new level!")
 
 # /////////////////////////////////////////
 
@@ -699,44 +685,44 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    return HttpResponse("Fantastic job! You have reached a new level!")
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! Tell your friends!")
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    return HttpResponse("Great! You have reached a new level that you must completed.")
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! You have reached a new level! Know it!")
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
-                    return HttpResponse("New level. Are you ready to accept new challenges?")
+                if student.learning_style=="Diverging":
+                    return HttpResponse("New level! Are you ready to accept new challenges?")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
+                    return HttpResponse("New level! New fresh information!")
+
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
-                    return HttpResponse("")
-
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! A new level is before your eyes!")
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
 
             else:
-                return HttpResponse("Congratulation! You have reached a new level!")
+                return HttpResponse("Congratulations! You have reached a new level!")
 
 # ///// ACTIONS THAT TAKE AWAY POINTS /////
 
@@ -757,21 +743,21 @@ class StudentAction(APIView):
                         return HttpResponse("-10 points, this should not happen. Cheer up!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-10 points, small mistake, don't miss your curiosity.")
+                        return HttpResponse("-10 points, small mistake, don't lose your curiosity.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("-10 points. Don't worry, use your imagination.")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
                         return HttpResponse("-10 points, no rush. Observe!")
 
-                    elif student.learning_style=="Pragmatist":
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("-10 points, don't worry and keep experimenting!")
 
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("-10 points, your plan has gone wrong this time. Don't worry.")
 
                     # LEARNING STYLES MECHANICS - PNL
@@ -801,41 +787,41 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points. Hurry up! Work hard and you could be a winner.")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points. Come on! It doesn't talk good about you.")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points. Really?")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points. Cheers up! High scores open doors.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
-                        return HttpResponse("Oh! -10 points, change your perspective.")
+                    if student.learning_style=="Diverging":
+                        return HttpResponse("Oh! -20 points, change your perspective.")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("-20 points, calm, there is time for thinking!")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points, Cheer up! Don't lose sight of the objective.")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points, don't worry, it sounds worse than it really is.")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points, don't worry, experiencing obstacles is part of the way.")
 
                 else:
                     return HttpResponse("Ouch! You have lost 20 points. Cheer up!")
@@ -854,41 +840,41 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. Take a rest and come back with force!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. This is not going to like your friends. Cheer up!")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. This isn't the way. Cheer up!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. Cheers up! High scores open doors.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("Ouch... -50 points! A brainstorm?")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("-50 points, don't worry and take your time!")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points, but don't worry, visualize the right track.")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points, but listen to youself: I CAN!")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points, big achievements require big efforts.")
 
                 else:
                     return HttpResponse("Ouch! You have lost 50 points. Cheer up! Cheer up!")
@@ -908,41 +894,41 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Cheer up! You can flip over your streak.")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Come on! Keep your reputation up.")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Come on! Are not you a winner?")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. That is the wrong way. Cheer up!")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("-5% in this level. Be careful.")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("-5% in this level. Look out!")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Calm, it seems little and can be recovered.")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Don't listen it and concentrate!")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Don't back down. You can retrieve it.")
 
                 else:
                     return HttpResponse("-5% in your progress. Come on! You can do better!")
@@ -963,41 +949,41 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Cheer up! You can improve it!")
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. It doesn't seem something to be proud of.")
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Come on! Change the chip!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Do you like to advance, right? Cheer up!")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Activist":
+                    if student.learning_style=="Diverging":
                         return HttpResponse("-10% in this level. This isn't cool!.")
 
-                    elif student.learning_style=="Reflector":
+                    elif student.learning_style=="Converging":
+                        return HttpResponse("-10% in this level. Stop, take a breath, observe, analize, proceed.")
+
+                    elif student.learning_style=="Accommodating":
                         return HttpResponse("")
 
-                    elif student.learning_style=="Pragmatist":
-                        return HttpResponse("")
-
-                    elif student.learning_style=="Theoretician":
+                    elif student.learning_style=="Assimilating":
                         return HttpResponse("")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Don't worry, we learn from mistakes.")
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Listen to yourself and you will recover it.")
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. You should recover the good feelings.")
 
                 else:
                     return HttpResponse("-10% in your progress. Come on! You can do better!")
@@ -1031,16 +1017,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("Nice visit, right? Thanks you, +10 points!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -1079,16 +1065,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("+10 points for your click!")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -1128,16 +1114,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -1177,16 +1163,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -1226,16 +1212,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
@@ -1275,16 +1261,16 @@ class StudentAction(APIView):
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
-                if student.learning_style=="Activist":
+                if student.learning_style=="Diverging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Reflector":
+                elif student.learning_style=="Converging":
                     return HttpResponse("")
 
-                elif student.learning_style=="Pragmatist":
+                elif student.learning_style=="Accommodating":
                     return HttpResponse("")
 
-                elif student.learning_style=="Theoretician":
+                elif student.learning_style=="Assimilating":
                     return HttpResponse("")
 
                 # LEARNING STYLES MECHANICS - PNL
