@@ -174,7 +174,7 @@ class StudentAction(APIView):
                     return HttpResponse("There is a time for everything. See you soon!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("See you soon. Stay committed!")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -222,7 +222,7 @@ class StudentAction(APIView):
                     return HttpResponse("+10 points, that is a good job!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("+10 points, great job!")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -269,7 +269,7 @@ class StudentAction(APIView):
                     return HttpResponse("+20 points, great analysis!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("+20 points, well done!")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -317,7 +317,7 @@ class StudentAction(APIView):
                     return HttpResponse("+50 points, thinking before acting is a great idea!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("Great! +50 points, that's a good attitude.")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -414,7 +414,7 @@ class StudentAction(APIView):
                     return HttpResponse("Great! +1 silver badge. Organize and win.")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("Great! +1 silver badge. More difficult challenges are waiting for you.")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -462,7 +462,7 @@ class StudentAction(APIView):
                     return HttpResponse("Great! +1 golden badge. A good analysis pays off!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("+1 golden bagde! Amazing! This is called a well used opportunity!")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -512,7 +512,7 @@ class StudentAction(APIView):
                         return HttpResponse("+5% in this level. Observe, analyze, forward.")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Let's go! Always advancing!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -559,7 +559,7 @@ class StudentAction(APIView):
                         return HttpResponse("Congratulations! New level, new info that needs order!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new ground for practice!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -609,7 +609,7 @@ class StudentAction(APIView):
                         return HttpResponse("+10% in this level. Good analyze, good job.")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. New challenges are closer.")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -656,7 +656,7 @@ class StudentAction(APIView):
                         return HttpResponse("Congratulations! New level, new info that needs order!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new ground for practice!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -706,7 +706,7 @@ class StudentAction(APIView):
                     return HttpResponse("New level! New fresh information!")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! New level, new ground for practice")
 
                 elif student.learning_style=="Assimilating":
                     return HttpResponse("")
@@ -808,7 +808,7 @@ class StudentAction(APIView):
                         return HttpResponse("-20 points, calm, there is time for thinking!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points, trial and error. Cheer up!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -861,7 +861,7 @@ class StudentAction(APIView):
                         return HttpResponse("-50 points, don't worry and take your time!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. Cheers up! Practice and get better.")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -915,7 +915,7 @@ class StudentAction(APIView):
                         return HttpResponse("-5% in this level. Look out!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Don't worry and be impulsive!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
@@ -970,7 +970,7 @@ class StudentAction(APIView):
                         return HttpResponse("-10% in this level. Stop, take a breath, observe, analize, proceed.")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Looking on the bright side and you will improve!")
 
                     elif student.learning_style=="Assimilating":
                         return HttpResponse("")
