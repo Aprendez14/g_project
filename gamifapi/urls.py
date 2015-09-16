@@ -13,10 +13,23 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+
+#from django.conf.urls import include, url
+from django.conf.urls import url, patterns, include
 from django.contrib import admin
 
-urlpatterns = [
-    url(r'^', include('users.urls')),
+#urlpatterns = [
+#    url('', include('social.apps.django_app.urls', namespace='social')),
+#    url(r'^engine/', include('students.urls')),
+#    url(r'^admin/', include(admin.site.urls)),
+#]
+
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browseable API.
+urlpatterns = patterns('',
+    #url(r'^', include(router.urls)),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^admin/', include(admin.site.urls)),
-]
+    url(r'^', include('students.urls')),
+)
