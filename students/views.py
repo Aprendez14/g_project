@@ -102,7 +102,7 @@ class StudentAction(APIView):
         # Sign in
         elif action.id==2:
 
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("Hello again. Are you ready for this?")
@@ -116,10 +116,7 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("Hello again, come in and discover it!")
 
-                else:
-                    return HttpResponse("Hello again. Come in!")
-
-            elif student.player_type=="Undefined":
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
@@ -144,15 +141,16 @@ class StudentAction(APIView):
                 elif student.learning_style=="Kinesthetic":
                     return HttpResponse("Hello again! Nice day, can you feel it?")
 
-                else:
-                    return HttpResponse("Hello again. Come in!")
+            else:
+                return HttpResponse("Hello again. Come in!")
 
 # /////////////////////////////////////////
 
+        # Log out
         elif action.id==3:
-            # Log out
-            #student.last_login = datetime.datetime.now()
-            if student.learning_style=="Undefined":
+
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("You still have to get many badges. See you soon!")
@@ -169,7 +167,7 @@ class StudentAction(APIView):
                 else:
                     return HttpResponse("We hope see you soon!")
 
-            elif student.player_type=="Undefined":
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
@@ -202,7 +200,9 @@ class StudentAction(APIView):
         elif action.id==4:
             student.points += 10
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("Good job! +10 points, go on!")
 
@@ -218,7 +218,8 @@ class StudentAction(APIView):
                 else:
                     return HttpResponse("Well done, +10 points!! ")
 
-            elif student.player_type=="Undefined":
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("+10 points, this is getting exciting!")
@@ -249,7 +250,9 @@ class StudentAction(APIView):
         elif action.id==5:
             student.points += 20
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("Great job! +20 points, that is the way!")
 
@@ -264,10 +267,11 @@ class StudentAction(APIView):
                 else:
                     return HttpResponse("We hope see you soon!")
 
-            elif student.player_type=="Undefined":
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
-                    return HttpResponse("+20 points, this is getting exciting!")
+                    return HttpResponse("+20 points, exciting experience, right?!")
 
                 elif student.learning_style=="Reflector":
                     return HttpResponse("")
@@ -296,7 +300,9 @@ class StudentAction(APIView):
         elif action.id==6:
             student.points += 50
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("Awesome! +50 points!")
 
@@ -311,7 +317,8 @@ class StudentAction(APIView):
                 else:
                     return HttpResponse("We hope see you soon!")
 
-            elif student.player_type=="Undefined":
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("Great! +50 points, keep it up!")
@@ -349,7 +356,9 @@ class StudentAction(APIView):
         elif action.id==7:
             student.bronze_badges += 1
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("Great! +1 bronze badge, the gold will soon arrive.")
 
@@ -362,8 +371,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("Great! +1 bronze badge, the search yields results!")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("+1 bronze badge! New experiences await you.")
 
@@ -394,7 +404,9 @@ class StudentAction(APIView):
         elif action.id==8:
             student.silver_badges += 1
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -407,8 +419,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("Great! +1 silver badge. Go on, even greater challenges await you!")
 
@@ -439,7 +452,9 @@ class StudentAction(APIView):
         elif action.id==9:
             student.golden_badges += 1
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -452,8 +467,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("Wow! +1 golden bagde, are you excited? You should!")
 
@@ -486,7 +502,9 @@ class StudentAction(APIView):
             if student.percent_in_level <= 95:
                 student.percent_in_level += 5
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -499,10 +517,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Go for it!")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -529,7 +548,9 @@ class StudentAction(APIView):
                 student.level += 1
                 student.percent_in_level = 0
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -542,10 +563,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulation! New level, new challenges!")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -576,7 +598,9 @@ class StudentAction(APIView):
             if student.percent_in_level <= 90:
                 student.percent_in_level += 10
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -589,10 +613,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. What a breakthrough!")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -620,7 +645,48 @@ class StudentAction(APIView):
                 student.level += 1
                 student.percent_in_level = 0
                 student.save()
-                return HttpResponse("Congratulation! You have reached a new level!")
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
+                    if student.player_type=="Achiever":
+                        return HttpResponse("")
+
+                    elif student.player_type=="Socializer":
+                        return HttpResponse("")
+
+                    elif student.player_type=="Killer":
+                        return HttpResponse("")
+
+                    elif student.player_type=="Explorer":
+                        return HttpResponse("")
+
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
+                    if student.learning_style=="Activist":
+                        return HttpResponse("Congratulation! New level, new challenges!")
+
+                    elif student.learning_style=="Reflector":
+                        return HttpResponse("")
+
+                    elif student.learning_style=="Pragmatist":
+                        return HttpResponse("")
+
+                    elif student.learning_style=="Theoretician":
+                        return HttpResponse("")
+
+                    # LEARNING STYLES MECHANICS - PNL
+                    elif student.learning_style=="Visual":
+                        return HttpResponse("")
+
+                    elif student.learning_style=="Auditory":
+                        return HttpResponse("")
+
+                    elif student.learning_style=="Kinesthetic":
+                        return HttpResponse("")
+
+                else:
+                    return HttpResponse("Congratulation! You have reached a new level!")
 
 # /////////////////////////////////////////
 
@@ -629,7 +695,9 @@ class StudentAction(APIView):
             student.level += 1
             student.percent_in_level = 0
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -642,10 +710,11 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
-                    return HttpResponse("")
+                    return HttpResponse("New level. Are you ready to accept new challenges?")
 
                 elif student.learning_style=="Reflector":
                     return HttpResponse("")
@@ -675,7 +744,9 @@ class StudentAction(APIView):
             if student.points > 10:
                 student.points -= 10
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("-10 points. Concentrate. You can do it.")
 
@@ -688,8 +759,9 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("-10 points, small mistake, don't miss your curiosity.")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
                         return HttpResponse("-10 points. Don't worry, use your imagination.")
 
@@ -725,7 +797,9 @@ class StudentAction(APIView):
             if student.points > 20:
                 student.points -= 20
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -738,10 +812,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("Oh! -10 points, change your perspective.")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -775,7 +850,9 @@ class StudentAction(APIView):
             if student.points > 50:
                 student.points -= 50
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -788,10 +865,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("Ouch... -50 points! A brainstorm?")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -826,7 +904,9 @@ class StudentAction(APIView):
             if student.percent_in_level > 5:
                 student.percent_in_level -= 5
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -839,10 +919,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. Be careful.")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -878,7 +959,9 @@ class StudentAction(APIView):
             if student.percent_in_level > 10:
                 student.percent_in_level -= 10
                 student.save()
-                if student.learning_style=="Undefined":
+                if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                    #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
                         return HttpResponse("")
 
@@ -891,10 +974,11 @@ class StudentAction(APIView):
                     elif student.player_type=="Explorer":
                         return HttpResponse("")
 
-                elif student.player_type=="Undefined":
-                    # LEARNING STYLES MECHANICS
+                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                    # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Activist":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. This isn't cool!.")
 
                     elif student.learning_style=="Reflector":
                         return HttpResponse("")
@@ -929,7 +1013,9 @@ class StudentAction(APIView):
             # Feedback and 10 points for visit
             student.points += 10
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -942,10 +1028,11 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
-                    return HttpResponse("")
+                    return HttpResponse("Nice visit, right? Thanks you, +10 points!")
 
                 elif student.learning_style=="Reflector":
                     return HttpResponse("")
@@ -975,7 +1062,8 @@ class StudentAction(APIView):
             # Feedback and 10 points for click
             student.points += 10
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -988,10 +1076,11 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
-                    return HttpResponse("")
+                    return HttpResponse("+10 points for your click!")
 
                 elif student.learning_style=="Reflector":
                     return HttpResponse("")
@@ -1019,9 +1108,11 @@ class StudentAction(APIView):
 
         elif action.id==20:
             # Feedback and 10 points for vote
-            student.points += 10
+            student.points += 20
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -1034,8 +1125,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("")
 
@@ -1059,15 +1151,17 @@ class StudentAction(APIView):
                     return HttpResponse("")
 
             else:
-                return HttpResponse("Thank you for your vote. +10 points!")
+                return HttpResponse("Thank you for your vote. +20 points!")
 
 # /////////////////////////////////////////
 
         elif action.id==21:
             # Feedback and 10 points for comment
-            student.points += 10
+            student.points += 20
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -1080,8 +1174,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("")
 
@@ -1113,7 +1208,9 @@ class StudentAction(APIView):
             # Feedback and 10 points for upload a file
             student.points += 10
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -1126,8 +1223,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("")
 
@@ -1157,9 +1255,11 @@ class StudentAction(APIView):
 
         elif action.id==23:
             # Feedback and 10 points for watch a video
-            student.points += 10
+            student.points += 20
             student.save()
-            if student.learning_style=="Undefined":
+            if student.learning_style=="Undefined" and student.player_type!="Undefined":
+
+                #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
                     return HttpResponse("")
 
@@ -1172,8 +1272,9 @@ class StudentAction(APIView):
                 elif student.player_type=="Explorer":
                     return HttpResponse("")
 
-            elif student.player_type=="Undefined":
-                # LEARNING STYLES MECHANICS
+            elif student.player_type=="Undefined" and student.learning_style!="Undefined":
+
+                # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Activist":
                     return HttpResponse("")
 
@@ -1197,4 +1298,4 @@ class StudentAction(APIView):
                     return HttpResponse("")
 
             else:
-                return HttpResponse("Great video, right? +10 points!")
+                return HttpResponse("Great video, right? +20 points!")
