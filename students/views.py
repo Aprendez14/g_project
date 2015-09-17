@@ -91,13 +91,12 @@ class StudentAction(APIView):
         student = self.get_object_student(pk)
         action = self.get_object_action(pk2)
 
-        #serializer = StudentSerializer(student)
 
         if action.id==1:
             # Log up
             return HttpResponse("You have been successfully logged up. Welcome!")
 
-
+# /////////////////////////////////////////
 
         # Sign in
         elif action.id==2:
@@ -177,7 +176,7 @@ class StudentAction(APIView):
                     return HttpResponse("See you soon. Stay committed!")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("Will we see you tomorrow? Think it!")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -225,7 +224,7 @@ class StudentAction(APIView):
                     return HttpResponse("+10 points, great job!")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("+10 points, well done. Step by step.")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -272,7 +271,7 @@ class StudentAction(APIView):
                     return HttpResponse("+20 points, well done!")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("+20 points, keep investigating!")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -320,7 +319,7 @@ class StudentAction(APIView):
                     return HttpResponse("Great! +50 points, that's a good attitude.")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("+50 points! Your logic is great!")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -408,16 +407,16 @@ class StudentAction(APIView):
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("Great! +1 silver badge. Go on, even greater challenges await you!")
+                    return HttpResponse("Great +1 silver badge! Go on, even greater challenges await you!")
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("Great! +1 silver badge. Organize and win.")
+                    return HttpResponse("Great +1 silver badge! Organize and win.")
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("Great! +1 silver badge. More difficult challenges are waiting for you.")
+                    return HttpResponse("Great +1 silver badge! More difficult challenges are waiting for you.")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("Great +1 silver badge! Planning, then advance!")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -465,7 +464,7 @@ class StudentAction(APIView):
                     return HttpResponse("+1 golden bagde! Amazing! This is called a well used opportunity!")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("+1 golden bagde! Good job! Be perfectionist.")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -515,7 +514,7 @@ class StudentAction(APIView):
                         return HttpResponse("+5% in this level. Let's go! Always advancing!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("+5% in this level. Reflection pays off!")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -562,7 +561,7 @@ class StudentAction(APIView):
                         return HttpResponse("Congratulations! New level, new ground for practice!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -612,7 +611,7 @@ class StudentAction(APIView):
                         return HttpResponse("+10% in this level. New challenges are closer.")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("+10% in this level. That is a fantastic planning.!")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -659,7 +658,7 @@ class StudentAction(APIView):
                         return HttpResponse("Congratulations! New level, new ground for practice!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -709,7 +708,7 @@ class StudentAction(APIView):
                     return HttpResponse("Congratulations! New level, new ground for practice")
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
@@ -796,7 +795,7 @@ class StudentAction(APIView):
                         return HttpResponse("-20 points. Really?")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-20 points. Cheers up! High scores open doors.")
+                        return HttpResponse("-20 points. Cheer up! High scores open doors.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
@@ -811,7 +810,7 @@ class StudentAction(APIView):
                         return HttpResponse("-20 points, trial and error. Cheer up!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("-20 points, don't worry and be rational.")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -849,7 +848,7 @@ class StudentAction(APIView):
                         return HttpResponse("-50 points. This isn't the way. Cheer up!")
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-50 points. Cheers up! High scores open doors.")
+                        return HttpResponse("-50 points. Cheer up! High scores open doors.")
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
@@ -861,10 +860,10 @@ class StudentAction(APIView):
                         return HttpResponse("-50 points, don't worry and take your time!")
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-50 points. Cheers up! Practice and get better.")
+                        return HttpResponse("-50 points. Cheer up! Practice and get better.")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("-50 points. Time to reflection. Cheer up!")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -918,7 +917,7 @@ class StudentAction(APIView):
                         return HttpResponse("-5% in this level. Don't worry and be impulsive!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("-5% in this level. The challenges don't always go well.")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
@@ -973,7 +972,7 @@ class StudentAction(APIView):
                         return HttpResponse("-10% in this level. Looking on the bright side and you will improve!")
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("")
+                        return HttpResponse("-10% in this level. Don't worry and inquire into the problem.")
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
