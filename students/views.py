@@ -200,43 +200,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("Good job! +10 points, go on!")
+                    respuesta = "<html><body>Good job! +10 points, go on! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Yes! +10 points, tell your friends it!")
+                    respuesta = "<html><body>Yes! +10 points, tell your friends it! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+10 points, no bad. But do you conform with that?")
+                    respuesta = "<html><body>+10 points, no bad. But do you conform with that? </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Good! +10 points, step by step knowledge comes...")
+                    respuesta = "<html><body>Good! +10 points, step by step knowledge comes... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("+10 points, this is getting exciting!")
+                    respuesta = "<html><body>+10 points, this is getting exciting! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("+10 points, that is a good job!")
+                    respuesta = "<html><body>+10 points, that is a good job! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("+10 points, great job!")
+                    respuesta = "<html><body>+10 points, great job! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("+10 points, well done. Step by step.")
+                    respuesta = "<html><body>+10 points, well done. Step by step. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("Your points is growing up! +10 points, ")
+                    respuesta = "<html><body>Your points is growing up! +10 points! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("+10 points never sounds bad")
+                    respuesta = "<html><body>+10 points never sounds bad. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("+10 points. Keep practicing!")
+                    respuesta = "<html><body>+10 points. Keep practicing! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
+
             else:
-                return HttpResponse("Well done, +10 points!! ")
+                respuesta = "<html><body>Well done, +10 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -247,44 +260,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("Great job! +20 points, that is the way!")
+                    respuesta = "<html><body>Great job! +20 points, that is the way! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Good! +20 points, You will make many friends if you keep this up!")
+                    respuesta = "<html><body>Good! +20 points, You will make many friends if you keep this up! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+20 points, really no bad!")
+                    respuesta = "<html><body>+20 points, really no bad! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Great! +20 points, go on, you still have much to discover.")
+                    respuesta = "<html><body>Great! +20 points, go on, you still have much to discover. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("+20 points, exciting experience, right?!")
+                    respuesta = "<html><body>+20 points, exciting experience, right?! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("+20 points, great analysis!")
+                    respuesta = "<html><body>+20 points, great analysis! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("+20 points, well done!")
+                    respuesta = "<html><body>+20 points, well done! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("+20 points, keep investigating!")
+                    respuesta = "<html><body>+20 points, keep investigating! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("Your points is growing up! +10 points, ")
+                    respuesta = "<html><body>Your points is growing up! +20 points! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("+10 points never sounds bad")
+                    respuesta = "<html><body>+20 points never sounds bad! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("+10 points. Keep practicing!")
+                    respuesta = "<html><body>+20 points. Keep practicing! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Well done, +20 points!! ")
+                respuesta = "<html><body>Well done, +20 points!! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -295,45 +320,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("Awesome! +50 points!")
+                    respuesta = "<html><body>Awesome! +50 points! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Great! +50 points, your friends will be proud of you!")
+                    respuesta = "<html><body>Great! +50 points, your friends will be proud of you! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+50 points. Show who is the boss!")
+                    respuesta = "<html><body>+50 points. Show who is the boss! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Great! +50 points, go on and be curious.")
+                    respuesta = "<html><body>Great! +50 points, go on and be curious. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("Great! +50 points, keep it up!")
+                    respuesta = "<html><body>Great! +50 points, keep it up! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("+50 points, thinking before acting is a great idea!")
+                    respuesta = "<html><body>+50 points, thinking before acting is a great idea! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("Great! +50 points, that's a good attitude.")
+                    respuesta = "<html><body>Great! +50 points, that's a good attitude. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("+50 points! Your logic is great!")
+                    respuesta = "<html><body>+50 points! Your logic is great! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("+50 points! This looks really good.")
+                    respuesta = "<html><body>+50 points! This looks really good. </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
                     respuesta = "<html><body>+50 points! Repeat it yourself: I'm working really well! </br> Your score is: %s.</body></html>" % student.points
                     return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("+50 points... this deserves a dance!")
+                    respuesta = "<html><body>+50 points... this deserves a dance! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Well done, +50 points!! ")
+                respuesta = "<html><body>Well done, +50 points!! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -344,44 +380,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("Great! +1 bronze badge, the gold will soon arrive.")
+                    respuesta = "<html><body>Great! +1 bronze badge, the gold will soon arrive. </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Great! +1 bronze badge, good topic to start a conversation!")
+                    respuesta = "<html><body>Great! +1 bronze badge, good topic to start a conversation! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+1 bronze badge, better than nothing, right?")
+                    respuesta = "<html><body>+1 bronze badge, better than nothing, right? </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Great! +1 bronze badge, the search yields results!")
+                    respuesta = "<html><body>Great! +1 bronze badge, the search yields results! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("+1 bronze badge! New experiences await you.")
+                    respuesta = "<html><body>+1 bronze badge! New experiences await you. </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("+1 bronze badge! This is just the beginning, keep practicing.")
+                    respuesta = "<html><body>+1 bronze badge! This is just the beginning, keep practicing. </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("Great! +1 bronze badge, your intuition works!")
+                    respuesta = "<html><body>Great! +1 bronze badge, your intuition works! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("Great! +1 bronze badge, this is better than any hypothesis!")
+                    respuesta = "<html><body>Great! +1 bronze badge, this is better than any hypothesis! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("Great! +1 bronze badge, it looks so great, right?")
+                    respuesta = "<html><body>Great! +1 bronze badge, it looks so great, right? </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("Great! +1 bronze badge! Listen for improvement.")
+                    respuesta = "<html><body>Great! +1 bronze badge! Listen for improvement. </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("Great! +1 bronze badge, you could almost touch it!")
+                    respuesta = "<html><body>Great! +1 bronze badge, you could almost touch it! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Great! You have earned a bronze badge! ")
+                respuesta = "<html><body>Great! You have earned a bronze badge! </br> You have %s bronze badges.</body></html>" % student.bronze_badges
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -392,44 +440,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("+1 silver badge, it's fantastic! But there are better badges yet.")
+                    respuesta = "<html><body>+1 silver badge, it's fantastic! But there are better badges yet. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("+1 silver badge, with it is easier make new friends!")
+                    respuesta = "<html><body>+1 silver badge, with it is easier make new friends! </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("+1 silver badge, but you prefer the golden badges, right?")
+                    respuesta = "<html><body>+1 silver badge, but you prefer the golden badges, right? </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("+1 silver badge, it demonstrates your experience.")
+                    respuesta = "<html><body>+1 silver badge, it demonstrates your experience. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("Great +1 silver badge! Go on, even greater challenges await you!")
+                    respuesta = "<html><body>Great +1 silver badge! Go on, even greater challenges await you! </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("Great +1 silver badge! Organize and win.")
+                    respuesta = "<html><body>Great +1 silver badge! Organize and win. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("Great +1 silver badge! More difficult challenges are waiting for you.")
+                    respuesta = "<html><body>Great +1 silver badge! More difficult challenges are waiting for you. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("Great +1 silver badge! Planning, then advance!")
+                    respuesta = "<html><body>Great +1 silver badge! Planning, then advance! </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("Wow! +1 silver badge. Imagine when your friends see it.")
+                    respuesta = "<html><body>Wow! +1 silver badge. Imagine when your friends see it. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("Wow! +1 silver badge! That sounds so good!.")
+                    respuesta = "<html><body>Wow! +1 silver badge! That sounds so good!. </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("Wow! +1 silver badge! Do you want touch it, right?")
+                    respuesta = "<html><body>Wow! +1 silver badge! Do you want touch it, right? </br> You have %s silver badges.</body></html>" % student.silver_badges
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Great! You have earned a silver badge! ")
+                respuesta = "<html><body>Great! You have earned a silver badge! </br> You have %s silver badges.</body></html>" % student.silver_badges
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -440,44 +500,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("+1 golden bagde, this is the reward for an amazing job!")
+                    respuesta = "<html><body>+1 golden bagde, this is the reward for an amazing job! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Great! +1 golden bagde. This is the most prestigious badge.")
+                    respuesta = "<html><body>Great! +1 golden bagde. This is the most prestigious badge. </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("Yes! +1 golden bagde! Show them who is the boss.")
+                    respuesta = "<html><body>Yes! +1 golden bagde! Show them who is the boss. </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Great! +1 golden bagde, a recognition of your experience and knowledge.")
+                    respuesta = "<html><body>Great! +1 golden bagde, a recognition of your experience and knowledge. </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("Wow! +1 golden bagde, are you excited? You should!")
+                    respuesta = "<html><body>Wow! +1 golden bagde, are you excited? You should! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("Great! +1 golden badge. A good analysis pays off!")
+                    respuesta = "<html><body>Great! +1 golden badge. A good analysis pays off! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("+1 golden bagde! Amazing! This is called a well used opportunity!")
+                    respuesta = "<html><body>+1 golden bagde! Amazing! This is called a well used opportunity! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("+1 golden bagde! Good job! Be perfectionist.")
+                    respuesta = "<html><body>+1 golden bagde! Good job! Be perfectionist. </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("+1 golden bagde! Amazing! Take a photo!")
+                    respuesta = "<html><body>+1 golden bagde! Amazing! Take a photo! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("+1 golden bagde! Amazing! Tell your friends!")
+                    respuesta = "<html><body>+1 golden bagde! Amazing! Tell your friends! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("+1 golden bagde! Amazing! Can you feeling that?")
+                    respuesta = "<html><body>+1 golden bagde! Amazing! Can you feeling that? </br> You have %s golden badges.</body></html>" % student.golden_badges
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Congratulations, you have earned a golden badge! ")
+                respuesta = "<html><body>Congratulations, you have earned a golden badge! </br> You have %s golden badges.</body></html>" % student.golden_badges
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -490,44 +562,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("+5% in this level. A little closer!")
+                        respuesta = "<html><body>+5% in this level. A little closer! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("+5% in this level. When you progress people are interested in you.")
+                        respuesta = "<html><body>+5% in this level. When you progress people are interested in you. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("+5% in this level. Hurry up! More rhythm!")
+                        respuesta = "<html><body>+5% in this level. Hurry up! More rhythm! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("+5% in this level. Strange new things are coming.")
+                        respuesta = "<html><body>+5% in this level. Strange new things are coming. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("+5% in this level. Go for it!")
+                        respuesta = "<html><body>+5% in this level. Go for it! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("+5% in this level. Observe, analyze, forward.")
+                        respuesta = "<html><body>+5% in this level. Observe, analyze, forward. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("+5% in this level. Let's go! Always advancing!")
+                        respuesta = "<html><body>+5% in this level. Let's go! Always advancing! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("+5% in this level. Reflection pays off!")
+                        respuesta = "<html><body>+5% in this level. Reflection pays off! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("+5% in this level. If progress grows up is all good.")
+                        respuesta = "<html><body>+5% in this level. If progress grows up is all good. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("+5% in this level. Listen how this goes on!")
+                        respuesta = "<html><body>+5% in this level. Listen how this goes on! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("+5% in this level. Good sensations, right?")
+                        respuesta = "<html><body>+5% in this level. Good sensations, right? </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Good job! Your progress advances +5% in this level!")
+                    respuesta = "<html><body>Good job! Your progress advances +5% in this level! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    return HttpResponse(respuesta)
 
             else:
                 student.level += 1
@@ -537,44 +621,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("New level! Congratulations! Let's go!")
+                        respuesta = "<html><body>New level! Congratulations! Let's go! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("Congratulations! New level! And more friends!")
+                        respuesta = "<html><body>Congratulations! New level! And more friends! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("New level! Let's go! Let's go!")
+                        respuesta = "<html><body>New level! Let's go! Let's go! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("Congratulations! New level, new world!")
+                        respuesta = "<html><body>Congratulations! New level, new world! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("Congratulations! New level, new challenges!")
+                        respuesta = "<html><body>Congratulations! New level, new challenges! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("Congratulations! New level, new info that needs order!")
+                        respuesta = "<html><body>Congratulations! New level, new info that needs order! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("Congratulations! New level, new ground for practice!")
+                        respuesta = "<html><body>Congratulations! New level, new ground for practice! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
+                        respuesta = "<html><body>Congratulations! New level, new things to investigate and analyze. </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("Congratulations! A new level is before your eyes!")
+                        respuesta = "<html><body>Congratulations! A new level is before your eyes! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
+                        respuesta = "<html><body>Congratulations! You have reached a new level! It sounds good, right? </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
+                        respuesta = "<html><body>Congratulations! You have reached a new level! Enjoy! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Congratulations! You have reached a new level!")
+                    respuesta = "<html><body>Congratulations! You have reached a new level! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -587,44 +683,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("+10% in this level. That's a big step! Go on!")
+                        respuesta = "<html><body>+10% in this level. That's a big step! Go on! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("+10% in this level. A little effort and then socialize.")
+                        respuesta = "<html><body>+10% in this level. A little effort and then socialize. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("+10% in this level. You know that this is the way.")
+                        respuesta = "<html><body>+10% in this level. You know that this is the way. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("+10% in this level. Discover the next level is nearer.")
+                        respuesta = "<html><body>+10% in this level. Discover the next level is nearer. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("+10% in this level. What a breakthrough!")
+                        respuesta = "<html><body>+10% in this level. What a breakthrough! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("+10% in this level. Good analyze, good job.")
+                        respuesta = "<html><body>+10% in this level. Good analyze, good job. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("+10% in this level. New challenges are closer.")
+                        respuesta = "<html><body>+10% in this level. New challenges are closer. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("+10% in this level. That is a fantastic planning.!")
+                        respuesta = "<html><body>+10% in this level. That is a fantastic planning.! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("+10% in this level. See? This is better!")
+                        respuesta = "<html><body>+10% in this level. See? This is better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("+10% in this level. Repeat: This is progressing!")
+                        respuesta = "<html><body>+10% in this level. Repeat: This is progressing! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("+10% in this level. Experiencing and growing up.")
+                        respuesta = "<html><body>+10% in this level. Experiencing and growing up. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Good job! Your progress advances +10% in this level!")
+                    respuesta = "<html><body>Good job! Your progress advances +10% in this level! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    return HttpResponse(respuesta)
 
             else:
                 student.level += 1
@@ -634,44 +742,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("New level! Congratulations! Let's go!")
+                        respuesta = "<html><body>New level! Congratulations! Let's go! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("Congratulations! New level! And more friends!")
+                        respuesta = "<html><body>Congratulations! New level! And more friends! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("New level! Let's go! Let's go!")
+                        respuesta = "<html><body>New level! Let's go! Let's go! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("Congratulations! New level, new world!")
+                        respuesta = "<html><body>Congratulations! New level, new world! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("Congratulations! New level, new challenges!")
+                        respuesta = "<html><body>Congratulations! New level, new challenges! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("Congratulations! New level, new info that needs order!")
+                        respuesta = "<html><body>Congratulations! New level, new info that needs order! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("Congratulations! New level, new ground for practice!")
+                        respuesta = "<html><body>Congratulations! New level, new ground for practice! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
+                        respuesta = "<html><body>Congratulations! New level, new things to investigate and analyze. </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("Congratulations! A new level is before your eyes!")
+                        respuesta = "<html><body>Congratulations! A new level is before your eyes! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
+                        respuesta = "<html><body>Congratulations! You have reached a new level! It sounds good, right? </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
+                        respuesta = "<html><body>Congratulations! You have reached a new level! Enjoy! </br> Now you are at level %s.</body></html>" % student.level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Congratulations! You have reached a new level!")
+                    respuesta = "<html><body>Congratulations! You have reached a new level! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -684,44 +804,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("Fantastic job! You have reached a new level!")
+                    respuesta = "<html><body>Fantastic job! You have reached a new level! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("Congratulations! Tell your friends!")
+                    respuesta = "<html><body>Congratulations! Tell your friends! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("Great! You have reached a new level that you must completed.")
+                    respuesta = "<html><body>Great! You have reached a new level that you must completed. </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("Congratulations! You have reached a new level! Know it!")
+                    respuesta = "<html><body>Congratulations! You have reached a new level! Know it! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("New level! Are you ready to accept new challenges?")
+                    respuesta = "<html><body>New level! Are you ready to accept new challenges? </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("New level! New fresh information!")
+                    respuesta = "<html><body>New level! New fresh information! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("Congratulations! New level, new ground for practice")
+                    respuesta = "<html><body>Congratulations! New level, new ground for practice </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("Congratulations! New level, new things to investigate and analyze.")
+                    respuesta = "<html><body>Congratulations! New level, new things to investigate and analyze. </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("Congratulations! A new level is before your eyes!")
+                    respuesta = "<html><body>Congratulations! A new level is before your eyes! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("Congratulations! You have reached a new level! It sounds good, right?")
+                    respuesta = "<html><body>Congratulations! You have reached a new level! It sounds good, right? </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("Congratulations! You have reached a new level! Enjoy!")
+                    respuesta = "<html><body>Congratulations! You have reached a new level! Enjoy! </br> Now you are at level %s.</body></html>" % student.level
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Congratulations! You have reached a new level!")
+                respuesta = "<html><body>Congratulations! You have reached a new level! </br> Now you are at level %s.</body></html>" % student.level
+                return HttpResponse(respuesta)
 
 # ///// ACTIONS THAT TAKE AWAY POINTS /////
 
@@ -733,48 +865,61 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("-10 points. Concentrate. You can do it.")
+                        respuesta = "<html><body>-10 points. Concentrate. You can do it. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("-10 points, don't worry, nobody is looking.")
+                        rrespuesta = "<html><body>-10 points, don't worry, nobody is looking. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("-10 points, this should not happen. Cheer up!")
+                        respuesta = "<html><body>-10 points, this should not happen. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-10 points, small mistake, don't lose your curiosity.")
+                        respuesta = "<html><body>-10 points, small mistake, don't lose your curiosity. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("-10 points. Don't worry, use your imagination.")
+                        respuesta = "<html><body>-10 points. Don't worry, use your imagination. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("-10 points, no rush. Observe!")
+                        respuesta = "<html><body>-10 points, no rush. Observe! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-10 points, don't worry and keep experimenting!")
+                        respuesta = "<html><body>-10 points, don't worry and keep experimenting! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("-10 points, your plan has gone wrong this time. Don't worry.")
+                        respuesta = "<html><body>-10 points, your plan has gone wrong this time. Don't worry. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("-10 points, Cheer up! Don't lose sight of the objective.")
+                        respuesta = "<html><body>-10 points, Cheer up! Don't lose sight of the objective. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("-10 points, don't worry, it sounds worse than it really is.")
+                        respuesta = "<html><body>-10 points, don't worry, it sounds worse than it really is. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("-10 points, don't worry, experiencing obstacles is part of the way.")
+                        respuesta = "<html><body>-10 points, don't worry, experiencing obstacles is part of the way. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Ouch! You have lost 10 points. Cheer up! ")
+                    respuesta = "<html><body>Ouch! You have lost 10 points. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
+
             else:
                 student.points = 0
                 student.save()
-                return HttpResponse("Your scores is 0, cheer up! Fall seven times and stand up eight!")
+                return HttpResponse("Your scores is 0. Cheer up! Fall seven times and stand up eight!")
 
 # /////////////////////////////////////////
 
@@ -786,44 +931,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("-20 points. Hurry up! Work hard and you could be a winner.")
+                        respuesta = "<html><body>-20 points. Hurry up! Work hard and you could be a winner. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("-20 points. Come on! It doesn't talk good about you.")
+                        respuesta = "<html><body>-20 points. Come on! It doesn't talk good about you. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("-20 points. Really?")
+                        respuesta = "<html><body>-20 points. Really? </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-20 points. Cheer up! High scores open doors.")
+                        respuesta = "<html><body>-20 points. Cheer up! High scores open doors. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("Oh! -20 points, change your perspective.")
+                        respuesta = "<html><body>Oh! -20 points, change your perspective. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("-20 points, calm, there is time for thinking!")
+                        respuesta = "<html><body>-20 points, calm, there is time for thinking! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-20 points, trial and error. Cheer up!")
+                        respuesta = "<html><body>-20 points, trial and error. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("-20 points, don't worry and be rational.")
+                        respuesta = "<html><body>-20 points, don't worry and be rational. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("-20 points, Cheer up! Don't lose sight of the objective.")
+                        respuesta = "<html><body>-20 points, Cheer up! Don't lose sight of the objective. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("-20 points, don't worry, it sounds worse than it really is.")
+                        respuesta = "<html><body>-20 points, don't worry, it sounds worse than it really is. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("-20 points, don't worry, experiencing obstacles is part of the way.")
+                        respuesta = "<html><body>-20 points, don't worry, experiencing obstacles is part of the way. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Ouch! You have lost 20 points. Cheer up!")
+                    respuesta = "<html><body>Ouch! You have lost 20 points. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
             else:
                 student.points = 0
                 student.save()
@@ -839,44 +996,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("-50 points. Take a rest and come back with force!")
+                        respuesta = "<html><body>-50 points. Take a rest and come back with force! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("-50 points. This is not going to like your friends. Cheer up!")
+                        respuesta = "<html><body>-50 points. This is not going to like your friends. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("-50 points. This isn't the way. Cheer up!")
+                        respuesta = "<html><body>-50 points. This isn't the way. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-50 points. Cheer up! High scores open doors.")
+                        respuesta = "<html><body>-50 points. Cheer up! High scores open doors. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("Ouch... -50 points! A brainstorm?")
+                        respuesta = "<html><body>Ouch... -50 points! A brainstorm? </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("-50 points, don't worry and take your time!")
+                        respuesta = "<html><body>-50 points, don't worry and take your time! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-50 points. Cheer up! Practice and get better.")
+                        respuesta = "<html><body>-50 points. Cheer up! Practice and get better. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("-50 points. Time to reflection. Cheer up!")
+                        respuesta = "<html><body>-50 points. Time to reflection. Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("-50 points, but don't worry, visualize the right track.")
+                        respuesta = "<html><body>-50 points, but don't worry, visualize the right track. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("-50 points, but listen to youself: I CAN!")
+                        respuesta = "<html><body>-50 points, but listen to youself: I CAN! </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("-50 points, big achievements require big efforts.")
+                        respuesta = "<html><body>-50 points, big achievements require big efforts. </br> Your score is: %s.</body></html>" % student.points
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("Ouch! You have lost 50 points. Cheer up! Cheer up!")
+                    respuesta = "<html><body>Ouch! You have lost 50 points. Cheer up! Cheer up! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
             else:
                 student.points = 0
                 student.save()
@@ -893,44 +1062,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("-5% in this level. Cheer up! You can flip over your streak.")
+                        respuesta = "<html><body>-5% in this level. Cheer up! You can flip over your streak. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("-5% in this level. Come on! Keep your reputation up.")
+                        respuesta = "<html><body>-5% in this level. Come on! Keep your reputation up. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("-5% in this level. Come on! Are not you a winner?")
+                        respuesta = "<html><body>-5% in this level. Come on! Are not you a winner? </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-5% in this level. That is the wrong way. Cheer up!")
+                        respuesta = "<html><body>-5% in this level. That is the wrong way. Cheer up! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("-5% in this level. Be careful.")
+                        respuesta = "<html><body>-5% in this level. Be careful. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("-5% in this level. Look out!")
+                        respuesta = "<html><body>-5% in this level. Look out! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-5% in this level. Don't worry and be impulsive!")
+                        respuesta = "<html><body>-5% in this level. Don't worry and be impulsive! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("-5% in this level. The challenges don't always go well.")
+                        respuesta = "<html><body>-5% in this level. The challenges don't always go well. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("-5% in this level. Calm, it seems little and can be recovered.")
+                        respuesta = "<html><body>-5% in this level. Calm, it seems little and can be recovered. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("-5% in this level. Don't listen it and concentrate!")
+                        respuesta = "<html><body>-5% in this level. Don't listen it and concentrate! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("-5% in this level. Don't back down. You can retrieve it.")
+                        respuesta = "<html><body>-5% in this level. Don't back down. You can retrieve it. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("-5% in your progress. Come on! You can do better!")
+                    respuesta = "<html><body>-5% in your progress. Come on! You can do better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    return HttpResponse(respuesta)
 
             else:
                 student.percent_in_level = 0
@@ -948,44 +1129,56 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        return HttpResponse("-10% in this level. Cheer up! You can improve it!")
+                        respuesta = "<html><body>-10% in this level. Cheer up! You can improve it! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        return HttpResponse("-10% in this level. It doesn't seem something to be proud of.")
+                        respuesta = "<html><body>-10% in this level. It doesn't seem something to be proud of. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        return HttpResponse("-10% in this level. Come on! Change the chip!")
+                        respuesta = "<html><body>-10% in this level. Come on! Change the chip! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        return HttpResponse("-10% in this level. Do you like to advance, right? Cheer up!")
+                        respuesta = "<html><body>-10% in this level. Do you like to advance, right? Cheer up! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        return HttpResponse("-10% in this level. This isn't cool!.")
+                        respuesta = "<html><body>-10% in this level. This isn't cool! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        return HttpResponse("-10% in this level. Stop, take a breath, observe, analize, proceed.")
+                        respuesta = "<html><body>-10% in this level. Stop, take a breath, observe, analize, proceed. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        return HttpResponse("-10% in this level. Looking on the bright side and you will improve!")
+                        respuesta = "<html><body>-10% in this level. Looking on the bright side and you will improve! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        return HttpResponse("-10% in this level. Don't worry and inquire into the problem.")
+                        respuesta = "<html><body>-10% in this level. Don't worry and inquire into the problem. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        return HttpResponse("-10% in this level. Don't worry, we learn from mistakes.")
+                        respuesta = "<html><body>-10% in this level. Don't worry, we learn from mistakes. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        return HttpResponse("-10% in this level. Listen to yourself and you will recover it.")
+                        respuesta = "<html><body>-10% in this level. Listen to yourself and you will recover it. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        return HttpResponse("-10% in this level. You should recover the good feelings.")
+                        respuesta = "<html><body>-10% in this level. You should recover the good feelings. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        return HttpResponse(respuesta)
 
                 else:
-                    return HttpResponse("-10% in your progress. Come on! You can do better!")
+                    respuesta = "<html><body>-10% in your progress. Come on! You can do better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    return HttpResponse(respuesta)
 
             else:
                 student.percent_in_level = 0
@@ -1002,44 +1195,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("Nice visit, right? Thanks you, +10 points!")
+                    respuesta = "<html><body>Nice visit, right? Thanks you, +10 points! </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Thank you for your visit. +10 points!")
+                respuesta = "<html><body>Thank you for your visit. +10 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -1050,44 +1255,55 @@ class StudentAction(APIView):
             if student.learning_style=="Undefined" and student.player_type!="Undefined":
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("+10 points for your click!")
+                    respuesta = "<html><body>+10 points for your click! </br> Your score is: %s.</body></html>" % student.points
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Thank you for click here. +10 points!")
+                respuesta = "<html><body>Thank you for click here. +10 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -1099,44 +1315,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Thank you for your vote. +20 points!")
+                respuesta = "<html><body>Thank you for your vote. +20 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -1148,44 +1376,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Thank you for your comment. +10 points!")
+                respuesta = "<html><body>Thank you for your comment. +10 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -1197,44 +1437,56 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Your file has been successfully uploaded. +10 points!")
+                respuesta = "<html><body>Your file has been successfully uploaded. +10 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
 
@@ -1246,41 +1498,53 @@ class StudentAction(APIView):
 
                 #  PLAYER TYPES MECHANICS - BARTLE
                 if student.player_type=="Achiever":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Socializer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Killer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.player_type=="Explorer":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                 # LEARNING STYLES MECHANICS - KOLB
                 if student.learning_style=="Diverging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Converging":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Accommodating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Assimilating":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 # LEARNING STYLES MECHANICS - PNL
                 elif student.learning_style=="Visual":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Auditory":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
                 elif student.learning_style=="Kinesthetic":
-                    return HttpResponse("")
+                    respuesta = "<html><body> ... </br> Your score is: %s.</body></html>" % student.points
+                    return HttpResponse(respuesta)
 
             else:
-                return HttpResponse("Great video, right? +20 points!")
+                respuesta = "<html><body>Great video, right? +20 points! </br> Your score is: %s.</body></html>" % student.points
+                return HttpResponse(respuesta)
