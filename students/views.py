@@ -562,114 +562,55 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        respuesta = "<html><body>+5% in this level. A little closer! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. A little closer! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        respuesta = "<html><body>+5% in this level. When you progress people are interested in you. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. When you progress people are interested in you. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        respuesta = "<html><body>+5% in this level. Hurry up! More rhythm! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Hurry up! More rhythm! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        respuesta = "<html><body>+5% in this level. Strange new things are coming. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Strange new things are coming. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        respuesta = "<html><body>+5% in this level. Go for it! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Go for it! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        respuesta = "<html><body>+5% in this level. Observe, analyze, forward. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Observe, analyze, forward. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        respuesta = "<html><body>+5% in this level. Let's go! Always advancing! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Let's go! Always advancing! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        respuesta = "<html><body>+5% in this level. Reflection pays off! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Reflection pays off! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        respuesta = "<html><body>+5% in this level. If progress grows up is all good. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. If progress grows up is all good. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        respuesta = "<html><body>+5% in this level. Listen how this goes on! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Listen how this goes on! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        respuesta = "<html><body>+5% in this level. Good sensations, right? </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+5 percent in this level. Good sensations, right? </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 else:
-                    respuesta = "<html><body>Good job! Your progress advances +5% in this level! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
-                    return HttpResponse(respuesta)
-
-            else:
-                student.level += 1
-                student.percent_in_level = 0
-                student.save()
-                if student.learning_style=="Undefined" and student.player_type!="Undefined":
-
-                    #  PLAYER TYPES MECHANICS - BARTLE
-                    if student.player_type=="Achiever":
-                        respuesta = "<html><body>New level! Congratulations! Let's go! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.player_type=="Socializer":
-                        respuesta = "<html><body>Congratulations! New level! And more friends! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.player_type=="Killer":
-                        respuesta = "<html><body>New level! Let's go! Let's go! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.player_type=="Explorer":
-                        respuesta = "<html><body>Congratulations! New level, new world! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                elif student.player_type=="Undefined" and student.learning_style!="Undefined":
-
-                    # LEARNING STYLES MECHANICS - KOLB
-                    if student.learning_style=="Diverging":
-                        respuesta = "<html><body>Congratulations! New level, new challenges! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.learning_style=="Converging":
-                        respuesta = "<html><body>Congratulations! New level, new info that needs order! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.learning_style=="Accommodating":
-                        respuesta = "<html><body>Congratulations! New level, new ground for practice! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.learning_style=="Assimilating":
-                        respuesta = "<html><body>Congratulations! New level, new things to investigate and analyze. </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    # LEARNING STYLES MECHANICS - PNL
-                    elif student.learning_style=="Visual":
-                        respuesta = "<html><body>Congratulations! A new level is before your eyes! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.learning_style=="Auditory":
-                        respuesta = "<html><body>Congratulations! You have reached a new level! It sounds good, right? </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                    elif student.learning_style=="Kinesthetic":
-                        respuesta = "<html><body>Congratulations! You have reached a new level! Enjoy! </br> Now you are at level %s.</body></html>" % student.level
-                        return HttpResponse(respuesta)
-
-                else:
-                    respuesta = "<html><body>Congratulations! You have reached a new level! </br> Now you are at level %s.</body></html>" % student.level
+                    respuesta = "<html><body>Good job! Your progress advances +5 percent in this level! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                     return HttpResponse(respuesta)
 
 # /////////////////////////////////////////
@@ -683,55 +624,55 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        respuesta = "<html><body>+10% in this level. That's a big step! Go on! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. That's a big step! Go on! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        respuesta = "<html><body>+10% in this level. A little effort and then socialize. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. A little effort and then socialize. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        respuesta = "<html><body>+10% in this level. You know that this is the way. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. You know that this is the way. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        respuesta = "<html><body>+10% in this level. Discover the next level is nearer. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. Discover the next level is nearer. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        respuesta = "<html><body>+10% in this level. What a breakthrough! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. What a breakthrough! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        respuesta = "<html><body>+10% in this level. Good analyze, good job. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. Good analyze, good job. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        respuesta = "<html><body>+10% in this level. New challenges are closer. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. New challenges are closer. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        respuesta = "<html><body>+10% in this level. That is a fantastic planning.! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. That is a fantastic planning.! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        respuesta = "<html><body>+10% in this level. See? This is better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. See? This is better! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        respuesta = "<html><body>+10% in this level. Repeat: This is progressing! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. Repeat: This is progressing! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        respuesta = "<html><body>+10% in this level. Experiencing and growing up. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>+10 percent in this level. Experiencing and growing up. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 else:
-                    respuesta = "<html><body>Good job! Your progress advances +10% in this level! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    respuesta = "<html><body>Good job! Your progress advances +10 percent in this level! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                     return HttpResponse(respuesta)
 
             else:
@@ -1062,61 +1003,61 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        respuesta = "<html><body>-5% in this level. Cheer up! You can flip over your streak. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Cheer up! You can flip over your streak. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        respuesta = "<html><body>-5% in this level. Come on! Keep your reputation up. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Come on! Keep your reputation up. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        respuesta = "<html><body>-5% in this level. Come on! Are not you a winner? </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Come on! Are not you a winner? </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        respuesta = "<html><body>-5% in this level. That is the wrong way. Cheer up! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. That is the wrong way. Cheer up! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        respuesta = "<html><body>-5% in this level. Be careful. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Be careful. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        respuesta = "<html><body>-5% in this level. Look out! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Look out! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        respuesta = "<html><body>-5% in this level. Don't worry and be impulsive! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Don't worry and be impulsive! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        respuesta = "<html><body>-5% in this level. The challenges don't always go well. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. The challenges don't always go well. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        respuesta = "<html><body>-5% in this level. Calm, it seems little and can be recovered. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Calm, it seems little and can be recovered. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        respuesta = "<html><body>-5% in this level. Don't listen it and concentrate! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Don't listen it and concentrate! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        respuesta = "<html><body>-5% in this level. Don't back down. You can retrieve it. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-5 percent in this level. Don't back down. You can retrieve it. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 else:
-                    respuesta = "<html><body>-5% in your progress. Come on! You can do better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    respuesta = "<html><body>-5 percent in your progress. Come on! You can do better! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                     return HttpResponse(respuesta)
 
             else:
                 student.percent_in_level = 0
                 student.save()
-                return HttpResponse("Your progress is 0% in this level, cheer up! You can do better!")
+                return HttpResponse("Your progress is 0 percent in this level, cheer up! You can do better!")
 
 # /////////////////////////////////////////
 
@@ -1129,55 +1070,55 @@ class StudentAction(APIView):
 
                     #  PLAYER TYPES MECHANICS - BARTLE
                     if student.player_type=="Achiever":
-                        respuesta = "<html><body>-10% in this level. Cheer up! You can improve it! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Cheer up! You can improve it! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Socializer":
-                        respuesta = "<html><body>-10% in this level. It doesn't seem something to be proud of. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. It doesn't seem something to be proud of. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Killer":
-                        respuesta = "<html><body>-10% in this level. Come on! Change the chip! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Come on! Change the chip! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.player_type=="Explorer":
-                        respuesta = "<html><body>-10% in this level. Do you like to advance, right? Cheer up! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Do you like to advance, right? Cheer up! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 elif student.player_type=="Undefined" and student.learning_style!="Undefined":
 
                     # LEARNING STYLES MECHANICS - KOLB
                     if student.learning_style=="Diverging":
-                        respuesta = "<html><body>-10% in this level. This isn't cool! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. This isn't cool! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Converging":
-                        respuesta = "<html><body>-10% in this level. Stop, take a breath, observe, analize, proceed. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Stop, take a breath, observe, analize, proceed. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Accommodating":
-                        respuesta = "<html><body>-10% in this level. Looking on the bright side and you will improve! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Looking on the bright side and you will improve! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Assimilating":
-                        respuesta = "<html><body>-10% in this level. Don't worry and inquire into the problem. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Don't worry and inquire into the problem. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     # LEARNING STYLES MECHANICS - PNL
                     elif student.learning_style=="Visual":
-                        respuesta = "<html><body>-10% in this level. Don't worry, we learn from mistakes. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Don't worry, we learn from mistakes. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Auditory":
-                        respuesta = "<html><body>-10% in this level. Listen to yourself and you will recover it. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. Listen to yourself and you will recover it. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                     elif student.learning_style=="Kinesthetic":
-                        respuesta = "<html><body>-10% in this level. You should recover the good feelings. </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                        respuesta = "<html><body>-10 percent in this level. You should recover the good feelings. </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                         return HttpResponse(respuesta)
 
                 else:
-                    respuesta = "<html><body>-10% in your progress. Come on! You can do better! </br> Your progress in this level is %s %.</body></html>" % student.percent_in_level
+                    respuesta = "<html><body>-10 percent in your progress. Come on! You can do better! </br> Your progress in this level is %s percent.</body></html>" % student.percent_in_level
                     return HttpResponse(respuesta)
 
             else:
